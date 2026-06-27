@@ -1,0 +1,19 @@
+# Segredos e sessão
+.env
+storage_state.json
+
+# Artefatos gerados
+downloads/*
+!downloads/.gitkeep
+logs/*.txt
+logs/screenshots/*
+!logs/.gitkeep
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+build/
+dist/
+*.spec
