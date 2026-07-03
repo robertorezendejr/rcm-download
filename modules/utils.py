@@ -8,7 +8,8 @@ from pathlib import Path
 from playwright.sync_api import Locator, Page
 from playwright.sync_api import TimeoutError as PlaywrightTimeoutError
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from modules.base import BASE_DIR
+
 SCREENSHOT_DIR = BASE_DIR / "logs" / "screenshots"
 
 

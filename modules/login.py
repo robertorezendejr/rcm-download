@@ -115,7 +115,9 @@ class LoginManager:
     def _wait_app_loaded(self) -> None:
         """Aguarda o retorno ao sistema e o carregamento completo."""
         self._page.wait_for_url(re.compile(r"mio\.app\.br"), timeout=120000)
-        self._page.wait_for_load_state("networkidle")
+        # "networkidle" nunca é atingido quando o modal de anúncios está aberto
+        # (o carrossel faz requisições contínuas). Usa "load" como critério.
+        self._page.wait_for_load_state("load", timeout=30000)
 
     # ------------------------------------------------------------------ #
     # Auxiliares

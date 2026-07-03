@@ -9,7 +9,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from modules.base import BASE_DIR
 
 
 @dataclass(frozen=True)

@@ -5,7 +5,8 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from modules.base import BASE_DIR
+
 LOG_DIR = BASE_DIR / "logs"
 
 

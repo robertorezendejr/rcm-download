@@ -1,13 +1,13 @@
 @echo off
 chcp 65001 >nul
 echo ============================================
-echo  Automa√ß√£o RCM - Iniciando...
+echo  AutomaÁ„o RCM - Iniciando...
 echo ============================================
 echo.
 
 :: Verifica se o ambiente virtual existe
 if not exist ".venv\Scripts\python.exe" (
-    echo [ERRO] Ambiente n√£o instalado.
+    echo [ERRO] Ambiente n„o instalado.
     echo Execute primeiro o arquivo: instalar_windows.bat
     echo.
     pause

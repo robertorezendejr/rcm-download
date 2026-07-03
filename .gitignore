@@ -1,6 +1,7 @@
 # Segredos e sessão
 .env
 storage_state.json
+edge_profile/
 
 # Artefatos gerados
 downloads/*

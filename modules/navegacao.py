@@ -45,6 +45,7 @@ class Navigator:
         self._dismiss_popups()
         self._nav(self._PATH_SUP)
         self._page.wait_for_timeout(2000)
+        self._dismiss_popups()
 
         # Confirma que o sub-menu de Suprimentos carregou (link RCM visível)
         try:
@@ -84,27 +85,28 @@ class Navigator:
 
     def _dismiss_popups(self) -> None:
         """Fecha modais/popups que possam aparecer após o login (ex: novidades do sistema)."""
-        # Aguarda um pouco para o popup carregar
-        self._page.wait_for_timeout(2000)
+        self._page.wait_for_timeout(3000)
 
-        for locator in [
-            self._page.get_by_role("button", name="Não perguntar novamente"),
-            self._page.get_by_role("button", name="Fechar"),
-            self._page.get_by_role("button", name="Close"),
-            self._page.locator("button.close"),
-            self._page.locator("[data-dismiss='modal']"),
-            self._page.locator(".modal .btn"),
-        ]:
-            try:
-                locator.first.wait_for(state="visible", timeout=4000)
-                locator.first.click()
+        # Procura qualquer botão com texto "Fechar" / "Close" e clica via JS.
+        # Sem checagem de visibilidade: se o modal está aberto, o botão existe no DOM.
+        try:
+            clicked = self._page.evaluate("""
+                () => {
+                    const textos = ['fechar', 'close', 'não perguntar novamente'];
+                    const btn = Array.from(document.querySelectorAll('button, a.btn'))
+                        .find(b => textos.some(t => b.textContent.trim().toLowerCase() === t));
+                    if (btn) { btn.click(); return btn.textContent.trim(); }
+                    return null;
+                }
+            """)
+            if clicked:
                 self._page.wait_for_timeout(800)
-                self._log.info("Popup fechado")
+                self._log.info("Popup fechado: '%s'", clicked)
                 return
-            except Exception:
-                continue
+        except Exception:
+            pass
 
-        # Fallback: tenta ESC caso nenhum botão tenha sido encontrado
+        # Fallback: ESC
         try:
             self._page.keyboard.press("Escape")
             self._page.wait_for_timeout(500)

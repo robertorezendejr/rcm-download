@@ -6,10 +6,11 @@ from contextlib import contextmanager
 from pathlib import Path
 from typing import Iterator
 
-from playwright.sync_api import Browser, BrowserContext, Page, sync_playwright
+from playwright.sync_api import BrowserContext, Page, sync_playwright
 
-BASE_DIR = Path(__file__).resolve().parent.parent
+from modules.base import BASE_DIR
 STORAGE_STATE = BASE_DIR / "storage_state.json"
+USER_DATA_DIR = BASE_DIR / "edge_profile"
 
 
 @contextmanager
@@ -17,23 +18,21 @@ def browser_session(
     headless: bool = False,
     keep_open: bool = False,
 ) -> Iterator[tuple[BrowserContext, Page]]:
-    """Abre o Google Chrome e devolve (context, page).
+    """Abre o Microsoft Edge e devolve (context, page).
 
-    Reaproveita a sessão salva em storage_state.json quando existir,
-    tornando os próximos acessos praticamente instantâneos.
+    Usa um perfil persistente em edge_profile/, evitando que o navegador
+    abra como uma janela anônima/InPrivate a cada execução.
     """
     with sync_playwright() as playwright:
-        browser: Browser = playwright.chromium.launch(
+        USER_DATA_DIR.mkdir(parents=True, exist_ok=True)
+
+        context: BrowserContext = playwright.chromium.launch_persistent_context(
+            str(USER_DATA_DIR),
             channel="msedge",  # usa o Microsoft Edge instalado na máquina
             headless=headless,
+            accept_downloads=True,
         )
-
-        context_kwargs: dict = {"accept_downloads": True}
-        if STORAGE_STATE.exists():
-            context_kwargs["storage_state"] = str(STORAGE_STATE)
-
-        context: BrowserContext = browser.new_context(**context_kwargs)
-        page = context.new_page()
+        page = context.pages[0] if context.pages else context.new_page()
         try:
             yield context, page
         finally:
@@ -45,7 +44,6 @@ def browser_session(
                     pass
             else:
                 context.close()
-                browser.close()
 
 
 def save_session(context: BrowserContext) -> None:
