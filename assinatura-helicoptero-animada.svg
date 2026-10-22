@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="170" viewBox="0 0 600 170" role="img" aria-labelledby="title desc">
+  <title id="title">Helicóptero chegando a uma plataforma offshore</title>
+  <desc id="desc">Um helicóptero azul e branco voa da esquerda e pousa no heliponto de uma plataforma no oceano.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#bfe4f6"/><stop offset="1" stop-color="#eaf7fb"/></linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#438eb7"/><stop offset="1" stop-color="#1c567f"/></linearGradient>
+    <filter id="softShadow" x="-30%" y="-80%" width="160%" height="260%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <rect width="600" height="170" rx="12" fill="url(#sky)"/>
+  <path d="M0 104H600V170H0z" fill="url(#sea)"/>
+  <path d="M0 118q28-8 56 0t56 0t56 0t56 0t56 0t56 0t56 0t56 0t56 0t56 0" fill="none" stroke="#8ac6df" stroke-width="2" opacity=".65"/>
+  <path d="M0 143q35-8 70 0t70 0t70 0t70 0t70 0t70 0t70 0t70 0t70 0" fill="none" stroke="#81bed9" stroke-width="2" opacity=".45"/>
+  <g fill="#fff" opacity=".8"><path d="M76 35c0-9 13-12 18-4 9-3 15 10 5 13H78c-6 0-7-7-2-9z"/><path d="M203 20c0-7 11-10 15-3 8-2 13 8 5 11h-18c-5 0-6-6-2-8z"/></g>
+
+  <!-- plataforma offshore e heliponto -->
+  <g id="platform">
+    <!-- casco lateral longo -->
+    <path d="M398 107h193l-13 47H411z" fill="#202d38"/>
+    <path d="M402 101h190v12H402z" fill="#d2a829"/>
+    <path d="M410 113h170" stroke="#6d7d87" stroke-width="3" opacity=".8"/>
+    <path d="M424 113l-8 50M567 113l8 50" stroke="#172631" stroke-width="7"/>
+    <!-- heliponto na extremidade da plataforma -->
+    <ellipse cx="456" cy="83" rx="50" ry="19" fill="#3b5f72" stroke="#f4dd65" stroke-width="3"/>
+    <path d="M452 70v26M439 83h26" stroke="#f4dd65" stroke-width="3"/>
+    <text x="449" y="88" font-family="Arial, sans-serif" font-size="11" font-weight="700" fill="#f4dd65">H</text>
+    <!-- instalações vistas de lado -->
+    <path d="M500 100V69h74v31" fill="#4b5b67"/>
+    <path d="M505 73h65M505 84h65M505 94h65" stroke="#c7d2d8" stroke-width="2"/>
+    <path d="M510 100V58M527 100V51M545 100V61M562 100V48" stroke="#d4dfe3" stroke-width="3"/>
+    <path d="M505 61h61M505 70h61" stroke="#d4dfe3" stroke-width="2"/>
+    <rect x="514" y="78" width="15" height="10" fill="#e4b83c"/><rect x="547" y="77" width="17" height="11" fill="#e4b83c"/>
+    <path d="M578 101V28h8v73" fill="none" stroke="#d9e2e6" stroke-width="4"/>
+    <path d="M575 29h15l-7-12z" fill="#ee5b3e"/>
+  </g>
+
+  <!-- helicóptero: voo 0–12s, aproximação e pouso 12–20s -->
+  <g id="helicopter">
+    <animateTransform attributeName="transform" type="translate" values="-145 -34;210 -34;323 -28;338 -22;338 -22" keyTimes="0;.42;.6;.7;1" dur="20s" repeatCount="indefinite"/>
+    <ellipse cx="70" cy="110" rx="47" ry="7" fill="#17384e" opacity=".24" filter="url(#softShadow)">
+      <animate attributeName="opacity" values=".08;.08;.15;.25;.25" keyTimes="0;.42;.6;.7;1" dur="20s" repeatCount="indefinite"/>
+    </ellipse>
+    <g transform="translate(190 0) scale(-1 1)">
+      <path d="M29 58q15-17 50-14q24 2 37 18l-9 25H35q-17-7-6-29z" fill="#f4f7f7" stroke="#273d4d" stroke-width="3"/>
+      <path d="M30 70h79l-4 17H35q-8-5-5-17z" fill="#1f668f"/>
+      <path d="M43 57q12-11 32-9l-5 20H39q-1-6 4-11z" fill="#243f52"/>
+      <path d="M73 49q20 1 31 15l-9 5H72z" fill="#426f89"/>
+      <path d="M106 60l54-14 2 7-54 19z" fill="#31566d"/>
+      <path d="M159 47l17-4 2 8-17 5z" fill="#294657"/>
+      <path d="M164 39v20" stroke="#273d4d" stroke-width="3"/>
+      <path d="M110 87l-7 18M48 87l-7 18M39 105h65" stroke="#253b49" stroke-width="4" stroke-linecap="round"/>
+      <path d="M57 39h17" stroke="#273d4d" stroke-width="4" stroke-linecap="round"/>
+      <g transform="translate(65 39)"><path d="M-51 0H51M0-4V4" stroke="#263b49" stroke-width="3" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="0;180;360" dur=".24s" repeatCount="indefinite"/></path></g>
+      <circle cx="32" cy="67" r="4" fill="#f3d146"/>
+    </g>
+  </g>
+  <text x="18" y="157" font-family="Arial, sans-serif" font-size="10" fill="#d8edf7">chegando com segurança à plataforma</text>
+</svg>

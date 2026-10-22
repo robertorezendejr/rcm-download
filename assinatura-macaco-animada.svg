@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="170" viewBox="0 0 600 170" role="img" aria-labelledby="title desc">
+  <title id="title">Jornada de evolução para a nuvem</title>
+  <desc id="desc">Um macaco marrom, de costas curvadas e braços longos, caminha, leva uma tocha, transforma-se em profissional, trabalha e o computador vira um raio que sobe para uma nuvem azul.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#f8fbff"/><stop offset="1" stop-color="#e7f3ff"/></linearGradient>
+    <filter id="removeWhite" color-interpolation-filters="sRGB"><feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 3 0"/></filter>
+    <style>
+      .limb{fill:none;stroke:#4a2715;stroke-width:7;stroke-linecap:round;stroke-linejoin:round}
+      .walk-a{transform-origin:34px 112px;animation:step-a .56s ease-in-out infinite}.walk-b{transform-origin:34px 112px;animation:step-b .56s ease-in-out infinite}
+      .swing-a{transform-origin:31px 76px;animation:step-b .56s ease-in-out infinite}.swing-b{transform-origin:31px 76px;animation:step-a .56s ease-in-out infinite}
+      .torch-arm{transform-origin:29px 76px;animation:step-b .56s ease-in-out infinite}.torch-leg-a{transform-origin:29px 92px;animation:step-a .56s ease-in-out infinite}.torch-leg-b{transform-origin:45px 94px;animation:step-b .56s ease-in-out infinite}
+      .business-leg-a{transform-origin:25px 89px;animation:step-a .56s ease-in-out infinite}.business-leg-b{transform-origin:46px 89px;animation:step-b .56s ease-in-out infinite}.business-arm-a{transform-origin:25px 60px;animation:step-b .56s ease-in-out infinite}.business-arm-b{transform-origin:46px 60px;animation:step-a .56s ease-in-out infinite}
+      .profile-leg-a{transform-origin:37px 89px;animation:step-a .56s ease-in-out infinite}.profile-leg-b{transform-origin:43px 89px;animation:step-b .56s ease-in-out infinite}.profile-arm-a{transform-origin:31px 61px;animation:step-b .56s ease-in-out infinite}.profile-arm-b{transform-origin:48px 61px;animation:step-a .56s ease-in-out infinite}
+      @keyframes step-a{0%,100%{transform:rotate(22deg)}50%{transform:rotate(-22deg)}}@keyframes step-b{0%,100%{transform:rotate(-22deg)}50%{transform:rotate(22deg)}}
+    </style>
+  </defs>
+  <rect width="600" height="170" rx="12" fill="url(#background)"/><path d="M18 132H582" stroke="#a8cfaf" stroke-width="3" stroke-linecap="round"/><ellipse cx="300" cy="137" rx="270" ry="8" fill="#83b38b" opacity=".17"/>
+  <!-- 0–5s: macaco vetorial, inspirado na referência, caminhando -->
+  <g opacity="1"><animate attributeName="opacity" values="1;1;0;0;0" keyTimes="0;.245;.25;.995;1" dur="20s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="-25 0;154 0;154 0" keyTimes="0;.25;1" dur="20s" repeatCount="indefinite"/>
+    <g transform="translate(16 14)">
+      <!-- cauda, costas altas e cabeça baixa: postura sempre corcunda -->
+      <path d="M31 83C3 81 0 48 17 35C8 14 31 1 48 17" fill="none" stroke="#4a2715" stroke-width="8" stroke-linecap="round"/>
+      <ellipse cx="45" cy="71" rx="25" ry="30" fill="#754315" transform="rotate(-27 45 71)"/>
+      <path d="M23 63Q39 30 64 34Q76 39 77 56Q54 67 28 74z" fill="#62340f"/>
+      <ellipse cx="72" cy="52" rx="19" ry="18" fill="#754315"/><ellipse cx="81" cy="58" rx="12" ry="9" fill="#d7a06d"/><path d="M66 43q8-13 20-3" fill="none" stroke="#4a2715" stroke-width="6" stroke-linecap="round"/><circle cx="83" cy="53" r="2.5" fill="#1f1713"/><path d="M87 65q5 3 9-1" fill="none" stroke="#3b1c12" stroke-width="2.5"/>
+      <!-- braços dianteiros, deliberadamente longos -->
+      <g><animateTransform attributeName="transform" type="rotate" values="8 59 69;-10 59 69;8 59 69" dur=".56s" repeatCount="indefinite"/><path d="M60 68L77 94 86 119" fill="none" stroke="#4a2715" stroke-width="10" stroke-linecap="round"/><path d="M80 120q10 5 18-1" fill="none" stroke="#d7a06d" stroke-width="6" stroke-linecap="round"/></g>
+      <g><animateTransform attributeName="transform" type="rotate" values="-10 53 71;8 53 71;-10 53 71" dur=".56s" repeatCount="indefinite"/><path d="M53 70L47 97 42 119" fill="none" stroke="#4a2715" stroke-width="10" stroke-linecap="round"/><path d="M35 120q9 6 18 0" fill="none" stroke="#d7a06d" stroke-width="6" stroke-linecap="round"/></g>
+      <!-- pernas traseiras curtas, dobradas sob o corpo -->
+      <g><animateTransform attributeName="transform" type="rotate" values="10 31 91;-11 31 91;10 31 91" dur=".56s" repeatCount="indefinite"/><path d="M32 89L20 106 15 121" fill="none" stroke="#4a2715" stroke-width="11" stroke-linecap="round"/><path d="M8 122q10 7 20 0" fill="none" stroke="#d7a06d" stroke-width="6" stroke-linecap="round"/></g>
+      <g><animateTransform attributeName="transform" type="rotate" values="-11 45 93;10 45 93;-11 45 93" dur=".56s" repeatCount="indefinite"/><path d="M46 92L56 108 64 121" fill="none" stroke="#4a2715" stroke-width="11" stroke-linecap="round"/><path d="M58 122q10 6 19-1" fill="none" stroke="#d7a06d" stroke-width="6" stroke-linecap="round"/></g>
+    </g>
+  </g>
+  <!-- 5–9s: macaco curvado com a tocha -->
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.25;.255;.445;.45;1" dur="20s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="-20 0;121 0;121 0" keyTimes="0;.25;.45;1" dur="20s" repeatCount="indefinite"/>
+    <g transform="translate(154 18)"><path d="M22 76C-4 74-5 43 12 32C6 11 31 2 42 16" class="limb"/><ellipse cx="36" cy="70" rx="24" ry="31" fill="#754315" transform="rotate(-22 36 70)"/><ellipse cx="50" cy="37" rx="20" ry="19" fill="#754315"/><ellipse cx="57" cy="43" rx="12" ry="9" fill="#d7a06d"/><circle cx="60" cy="37" r="2.6" fill="#17191d"/>
+      <g class="torch-arm"><path d="M29 76L12 101 7 119" class="limb"/><path d="M2 119h12" stroke="#d7a06d" stroke-width="4" stroke-linecap="round"/></g>
+      <g class="torch-leg-a"><path d="M29 92L19 113 13 124" class="limb"/><path d="M7 124h13" stroke="#d7a06d" stroke-width="4" stroke-linecap="round"/></g>
+      <g class="torch-leg-b"><path d="M45 94L53 113 62 122" class="limb"/><path d="M57 122h14" stroke="#d7a06d" stroke-width="4" stroke-linecap="round"/></g>
+      <path d="M50 77L66 65" class="limb"/><path d="M67 66V19" stroke="#56311e" stroke-width="5" stroke-linecap="round"/><path d="M67 20C52 4 61-12 68-23c3 11 20 20 3 43z" fill="#ffd229" stroke="#ec9f17" stroke-width="3" stroke-linejoin="round"><animate attributeName="d" values="M67 20C52 4 61-12 68-23c3 11 20 20 3 43z;M67 20C60 1 74-9 67-28c12 14 18 28 3 48z;M67 20C52 4 61-12 68-23c3 11 20 20 3 43z" dur=".45s" repeatCount="indefinite"/></path></g>
+  </g>
+  <!-- 9–13s: homem ereto de terno e gravata -->
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.45;.455;.645;.65;1" dur="20s" repeatCount="indefinite"/><animateTransform attributeName="transform" type="translate" values="-22 0;98 0;98 0" keyTimes="0;.45;.65;1" dur="20s" repeatCount="indefinite"/>
+      <!-- perfil lateral inequívoco, voltado para a direita -->
+      <g transform="translate(292 20)"><ellipse cx="41" cy="117" rx="24" ry="6" fill="#8aaa8e" opacity=".3"/><path d="M31 52Q43 47 50 58L49 89H29L27 61q0-6 4-9z" fill="#14171c"/><path d="M39 53l4 13 5-11" fill="#fff"/><path d="M43 64l3 19 3-18z" fill="#d92531"/>
+        <ellipse cx="48" cy="30" rx="15" ry="20" fill="#edeff1" stroke="#17191d" stroke-width="4"/><path d="M34 31c1-24 27-27 30-4-7-7-21-8-30 4z" fill="#17191d"/><circle cx="56" cy="29" r="2.5" fill="#17191d"/><path d="M62 34l8 4-8 3" fill="#edeff1" stroke="#17191d" stroke-width="2" stroke-linejoin="round"/><path d="M55 42q5 3 9-1" fill="none" stroke="#17191d" stroke-width="2.5"/>
+        <g class="profile-leg-a"><path d="M37 89L27 104 25 116" stroke="#14171c" stroke-width="10" stroke-linecap="round"/></g><g class="profile-leg-b"><path d="M43 89L53 104 55 116" stroke="#14171c" stroke-width="10" stroke-linecap="round"/></g>
+        <g class="profile-arm-a"><path d="M31 61L24 79" stroke="#14171c" stroke-width="8" stroke-linecap="round"/><circle cx="24" cy="79" r="4.5" fill="#d7a06d"/></g><g class="profile-arm-b"><path d="M48 61L57 78" stroke="#14171c" stroke-width="8" stroke-linecap="round"/><circle cx="57" cy="78" r="4.5" fill="#d7a06d"/></g></g>
+  </g>
+  <!-- 13–16s: homem no computador, olha para a nuvem -->
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0;.65;.655;.795;.8;1" dur="20s" repeatCount="indefinite"/>
+    <g transform="translate(367 5) scale(1.18)"><path d="M8 105h92" stroke="#75533b" stroke-width="7" stroke-linecap="round"/>
+      <!-- corpo sentado, visível à frente do computador -->
+      <path d="M8 55L5 89h40l-4-34c-9-7-24-7-33 0z" fill="#14171c"/><path d="M17 89v12M35 89v12" stroke="#14171c" stroke-width="9" stroke-linecap="round"/>
+      <path d="M20 55l5 13 5-13" fill="#fff"/><path d="M25 67l3 16 3-16z" fill="#d92531"/>
+      <circle cx="25" cy="38" r="18" fill="#edeff1" stroke="#17191d" stroke-width="4"/><path d="M9 38c3-21 31-23 34-2-9-7-24-7-34 2z" fill="#17191d"/><circle cx="31" cy="37" r="2.2" fill="#17191d"/>
+      <path d="M12 58L27 82M38 58L52 76" stroke="#14171c" stroke-width="8" stroke-linecap="round"/><circle cx="27" cy="82" r="3.8" fill="#d7a06d"/><circle cx="52" cy="76" r="3.8" fill="#d7a06d"/>
+      <rect x="51" y="62" width="42" height="27" rx="3" fill="#263f59"/><rect x="55" y="66" width="34" height="18" rx="1" fill="#c6edff"/><path d="M46 94h53" stroke="#263f59" stroke-width="5" stroke-linecap="round"/><path d="M24 17v-7" stroke="#17191d" stroke-width="2"/><path d="M114 38h50c12 0 14-18 1-20-4-17-31-20-41-4-15-5-23 11-10 24z" fill="#4aa8e5"/></g>
+  </g>
+  <!-- 16–20s: o computador vira raio; o homem fica parado olhando para cima -->
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;.8;.805;.995;1" dur="20s" repeatCount="indefinite"/>
+    <path d="M485 64h64c15 0 17-23 1-25-4-19-34-20-43-4-16-6-25 11-22 29z" fill="#4aa8e5"/>
+    <!-- empresário imóvel, cabeça voltada para a nuvem -->
+    <g transform="translate(382 41)"><path d="M13 88V111M34 88V111" stroke="#14171c" stroke-width="9" stroke-linecap="round"/><path d="M5 49L1 89h46l-5-40c-9-7-27-7-37 0z" fill="#14171c"/><path d="M16 50l6 14 6-14" fill="#fff"/><path d="M22 63l3 20 4-20z" fill="#d92531"/><circle cx="25" cy="29" r="20" fill="#edeff1" stroke="#17191d" stroke-width="4"/><path d="M7 29c3-23 35-24 38-2-9-8-28-8-38 2z" fill="#17191d"/><circle cx="35" cy="24" r="2.5" fill="#17191d"/><path d="M34 39q6 3 10-1" fill="none" stroke="#17191d" stroke-width="2.5"/><path d="M7 58L-2 78M43 58L54 77" stroke="#14171c" stroke-width="8" stroke-linecap="round"/><circle cx="-2" cy="78" r="4" fill="#d7a06d"/><circle cx="54" cy="77" r="4" fill="#d7a06d"/></g>
+    <path d="M438 115l15-24h-9l22-30-8 23h10z" fill="#ffd229" stroke="#eaaa14" stroke-width="3" stroke-linejoin="round"><animateTransform attributeName="transform" type="translate" values="0 0;0 0;80 -22;80 -22" keyTimes="0;.8;.95;1" dur="20s" repeatCount="indefinite"/></path>
+    <circle cx="518" cy="56" r="4" fill="#e2f6ff"><animate attributeName="r" values="2;6;2" dur=".9s" repeatCount="indefinite"/></circle>
+  </g>
+  <text x="22" y="154" font-family="Arial, sans-serif" font-size="10" fill="#577084">uma jornada que vai mais longe</text>
+</svg>
