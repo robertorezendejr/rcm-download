@@ -69,26 +69,27 @@ class ReportDownloader:
 
         self._log.info("Filtros preenchidos")
 
-    def export_excel(self) -> Path:
+    def export_excel(self, target_folder: Path | None = None) -> Path:
         """Clica em 'Exportar em Excel' e salva o arquivo baixado."""
-        self._progress.stage("Baixando Excel...")
-        self._log.info("Download iniciado")
+        self._progress.stage("Baixando Excel do RCM...")
+        self._log.info("Download do RCM iniciado")
 
         btn = self._page.locator("#btn_export")
         try:
-            btn.wait_for(state="visible", timeout=8_000)
+            btn.wait_for(state="visible", timeout=12_000)
         except PlaywrightTimeout as exc:
             raise ElementNotFoundError(
                 "Botão 'Exportar em Excel' (#btn_export) não encontrado"
             ) from exc
 
-        target = self._config.download_path / self._target_filename()
-        with self._page.expect_download(timeout=120_000) as dl:
+        folder = target_folder or self._config.get_today_folder()
+        target = folder / self._target_filename()
+        with self._page.expect_download(timeout=180_000) as dl:
             btn.click()
         dl.value.save_as(str(target))
 
-        self._progress.success("Download concluído")
-        self._log.info("Download concluído: %s", target)
+        self._progress.success(f"Download do RCM concluído: {target.name}")
+        self._log.info("Download do RCM concluído: %s", target)
         return target
 
     # ------------------------------------------------------------------ #

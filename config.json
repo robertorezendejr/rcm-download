@@ -1,8 +1,16 @@
 {
   "url": "https://mio.app.br/",
+  "reports_url": "https://mio.app.br/home/?p=Y2dzL3JlcG9ydHMvbGlzdD90eXBlPXJlYWQ=",
   "tipo": "Detalhado",
   "contrato": "UOBS_2025",
   "contrato_uop": "UOBS_2025 - P-68 - PETROBRAS - EDISE",
   "portfolio": "P68-2026-PP",
-  "download_path": "~/Downloads"
+  "download_path": "C:\\Users\\roberto.rezende\\Downloads\\00-Atualização de sistema",
+  "relatorios": [
+    "000002",
+    "000005",
+    "000010"
+  ],
+  "pcs_source": "C:\\Users\\roberto.rezende\\OneDrive - ESTRUTURAL PADRÃO\\Site de comunicação - P-68-PP-SharePoint\\09-Planejamento\\06-Acompanhamento de SS\\UN_BS_Acompanhamento_de_SS-P-68PP.xlsm",
+  "pcs_sheet": "PCS"
 }
