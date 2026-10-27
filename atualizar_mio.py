@@ -18,6 +18,14 @@ from datetime import date
 from pathlib import Path
 from tkinter import Tk, messagebox
 
+# Nos executáveis gerados pelo PyInstaller, o Chromium distribuído junto ao
+# aplicativo é extraído em ``sys._MEIPASS``. O Playwright só o encontra se a
+# variável abaixo apontar para essa pasta antes de iniciar a automação.
+if getattr(sys, "frozen", False):
+    bundled_browsers = Path(getattr(sys, "_MEIPASS", Path(sys.executable).parent)) / "ms-playwright"
+    if bundled_browsers.is_dir():
+        os.environ.setdefault("PLAYWRIGHT_BROWSERS_PATH", str(bundled_browsers))
+
 from playwright.sync_api import BrowserContext, Download, Locator, Page, TimeoutError as PlaywrightTimeoutError, sync_playwright
 
 
@@ -476,6 +484,22 @@ def download_rcm(page: Page, folder: Path) -> None:
     status(f"RCM baixado com sucesso: {destination.name}")
 
 
+def verify_bundled_browser() -> None:
+    """Verifica se o navegador distribuído no executável consegue iniciar.
+
+    Este modo não acessa o MIO e não altera o perfil de trabalho. É usado na
+    validação da distribuição com ``--verificar-navegador``.
+    """
+    with tempfile.TemporaryDirectory(prefix="mio_browser_check_") as profile:
+        with sync_playwright() as playwright:
+            context = playwright.chromium.launch_persistent_context(
+                profile,
+                headless=False,
+                accept_downloads=True,
+            )
+            context.close()
+
+
 def run() -> None:
     setup_logging()
     folder = today_folder()
@@ -522,4 +546,11 @@ def run() -> None:
 
 
 if __name__ == "__main__":
-    run()
+    if "--verificar-navegador" in sys.argv:
+        try:
+            verify_bundled_browser()
+        except Exception:
+            traceback.print_exc()
+            sys.exit(1)
+    else:
+        run()
